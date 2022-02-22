@@ -30,16 +30,13 @@ model.fit(x_train, y_train, epochs=12) #Trains data using mnist data set, fits s
 #epochs are how many times network sees the data
 
 
-model.save('digitrecognition.model')
+model.save('digitrecognition.model') #Saves model for reuse
 
 
 #COMMENT OUT ABOVE CODE TO AVOID TRAINING SAME DATA EVERY TIME
 
 model = tf.keras.models.load_model('digitrecognition.model')
 
-#loss, accuracy, = model.evaluate(x_test, y_test)
-#print(loss) #want low numbers
-#print(accuracy) #want higher number 
 
 image_num = 1
 while os.path.isfile(f"digits/{image_num}.png"):
